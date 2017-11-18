@@ -60,16 +60,16 @@ class Equity(object):
     def return_on_assets(self):
         data = self.company_data
         return_on_assets = data.get('roa', None)
-        return (float(return_on_assets) * 100)
+        return return_on_assets
     
     @property
     def return_on_equity(self):
         data = self.company_data
         return_on_equity = data.get('roe', None)
-        return (float(return_on_equity) * 100 )
+        return return_on_equity
     
     @property
     def return_on_invest_capital(self):
         data = self.company_data
         return_on_invest_capital = data.get('roic', None)
-        return (float(return_on_invest_capital) * 100 )
+        return return_on_invest_capital
