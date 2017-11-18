@@ -1,5 +1,6 @@
 import requests
 
+
 class Equity(object):
 
     def __init__(self, ticker, api_key=None):
@@ -13,9 +14,10 @@ class Equity(object):
         data = resp.json()['datatable']
         data_dict = {}
         count = 0
-        for col in data['columns']:
-            data_dict.update({col['name'] : data['data'][0][count]})
-            count +=1
+        if data['data']:
+            for col in data['columns']:
+                data_dict.update({col['name'] : data['data'][0][count]})
+                count +=1
         return data_dict
 
     @property
